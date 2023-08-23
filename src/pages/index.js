@@ -38,11 +38,24 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Hoy toca:</h1>
-      <p>Limpiar Mesa: {router.query.firstResult || 'Loading...'}</p>
-      <p>Lavar Trastes: {router.query.secondResult || 'Loading...'}</p>
-    </div>
+    <>
+      <div className="navbar bg-base-100">
+        <a className="btn btn-ghost normal-case text-xl">Que Me Toca Hoy?</a>
+      </div>
+      <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card-body">
+          <h2 className="card-title">Limpiar Mesa: </h2>
+          <p>{router.query.firstResult || 'Loading...'}</p>
+        </div>
+      </div>
+      <br/>
+      <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card-body">
+          <h2 className="card-title">Lavar Trastes:  </h2>
+          <p>{router.query.secondResult || 'Loading...'}</p>
+        </div>
+      </div>
+    </>
   );
 };
 
